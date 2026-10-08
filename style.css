@@ -1,0 +1,118 @@
+/* --- 1. Reset các cài đặt mặc định của trình duyệt --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* --- 2. Định dạng các khối chính (CSS Layout) --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Header */
+.header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Navigation Bar */
+.topnav {
+    background-color: #34495e;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    background-color: #1abc9c;
+    color: white;
+}
+
+/* Thân trang: Sử dụng Flexbox để chia cột ngang */
+.main-content {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử rớt dòng khi thiếu không gian */
+    gap: 10px;       /* Khoảng cách giữa các cột */
+    margin-bottom: 10px;
+}
+
+/* Sidebar chiếm tỷ lệ nhỏ hơn (ví dụ: 25%) */
+.sidebar {
+    flex: 1;
+    min-width: 250px; /* Độ rộng tối thiểu trước khi rớt dòng */
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #2980b9;
+    display: block;
+    padding: 8px 0;
+}
+
+/* Content chính chiếm tỷ lệ lớn hơn (ví dụ: 75%) */
+.content {
+    flex: 3;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* --- 3. Cấu hình Responsive với Media Queries --- */
+/* Khi màn hình nhỏ hơn hoặc bằng 768px (máy tính bảng, điện thoại) */
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Chuyển dịch từ hàng ngang thành hàng dọc */
+    }
+
+    .topnav a {
+        float: none;
+        width: 100%; /* Menu đổ dọc toàn màn hình */
+        text-align: left;
+        border-bottom: 1px solid #4f5d73;
+    }
+}
